@@ -1,10 +1,10 @@
 {
-  "name": "passport-github",
-  "version": "1.1.0",
-  "description": "GitHub authentication strategy for Passport.",
+  "name": "passport-basecamp",
+  "version": "1.0.0",
+  "description": "Basecamp authentication strategy for Passport.",
   "keywords": [
     "passport",
-    "github",
+    "basecamp",
     "auth",
     "authn",
     "authentication",
@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/jaredhanson/passport-github.git"
+    "url": "http://github.com/jaredhanson/passport-basecamp.git"
   },
   "bugs": {
-    "url": "http://github.com/jaredhanson/passport-github/issues"
+    "url": "http://github.com/jaredhanson/passport-basecamp/issues"
   },
   "license": "MIT",
   "licenses": [
