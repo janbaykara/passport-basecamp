@@ -1,4 +1,4 @@
-# passport-github
+# passport-basecamp
 
 **Adaption of [passport-github](https://github.com/jaredhanson/passport-github) by [@jaredhanson](https://github.com/jaredhanson)**
 
@@ -14,17 +14,16 @@ unobtrusively integrated into any application or framework that supports
 ## Install
 
 ```bash
-$ npm install passport-github
+$ npm install passport-basecamp
 ```
 
 ## Usage
 
 #### Create an Application
 
-Before using `passport-github`, you must register an application with Basecamp.
+Before using `passport-basecamp`, you must register an application with Basecamp.
 If you have not already done so, a new application can be created at
-[developer applications](https://github.com/settings/applications/new) within
-Basecamp's settings panel.  Your application will be issued a client ID and client
+[Your Applications](https://launchpad.37signals.com/integrations).  Your application will be issued a client ID and client
 secret, which need to be provided to the strategy.  You will also need to
 configure a callback URL which matches the route in your application.
 
@@ -39,15 +38,15 @@ Basecamp profile.  The `verify` callback must call `cb` providing a user to
 complete authentication.
 
 ```js
-var BasecampStrategy = require('passport-github').Strategy;
+var BasecampStrategy = require('passport-basecamp').Strategy;
 
 passport.use(new BasecampStrategy({
     clientID: GITHUB_CLIENT_ID,
     clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://127.0.0.1:3000/auth/github/callback"
+    callbackURL: "http://127.0.0.1:3000/auth/basecamp/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ githubId: profile.id }, function (err, user) {
+    User.findOrCreate({ basecampId: profile.id }, function (err, user) {
       return cb(err, user);
     });
   }
@@ -56,18 +55,18 @@ passport.use(new BasecampStrategy({
 
 #### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'github'` strategy, to
+Use `passport.authenticate()`, specifying the `'basecamp'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
 ```js
-app.get('/auth/github',
-  passport.authenticate('github'));
+app.get('/auth/basecamp',
+  passport.authenticate('basecamp'));
 
-app.get('/auth/github/callback',
-  passport.authenticate('github', { failureRedirect: '/login' }),
+app.get('/auth/basecamp/callback',
+  passport.authenticate('basecamp', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/');
@@ -99,7 +98,3 @@ and [other](http://jaredhanson.net/pay) methods.  Any amount is appreciated.
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2011-2016 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/passport-github'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/passport-github.svg' /></a>
