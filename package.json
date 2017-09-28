@@ -1,7 +1,7 @@
 {
   "name": "passport-basecamp",
   "version": "1.0.0",
-  "description": "Basecamp authentication strategy for Passport.",
+  "description": "Basecamp auth strategy for Passport, based on Jared Hanson's passport-github.",
   "keywords": [
     "passport",
     "basecamp",
@@ -11,16 +11,13 @@
     "identity"
   ],
   "author": {
-    "name": "Jared Hanson",
-    "email": "jaredhanson@gmail.com",
-    "url": "http://www.jaredhanson.net/"
+    "name": "Jan Baykara",
+    "email": "janbaykara@gmail.com",
+    "url": "http://twitter.com/janbaykara"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/jaredhanson/passport-basecamp.git"
-  },
-  "bugs": {
-    "url": "http://github.com/jaredhanson/passport-basecamp/issues"
+    "url": "http://github.com/janbaykara/passport-basecamp.git"
   },
   "license": "MIT",
   "licenses": [
@@ -42,8 +39,5 @@
   },
   "engines": {
     "node": ">= 0.4.0"
-  },
-  "scripts": {
-    "test": "node_modules/.bin/mocha --require test/bootstrap/node test/*.test.js"
   }
 }
